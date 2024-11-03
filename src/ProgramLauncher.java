@@ -10,9 +10,9 @@ public class ProgramLauncher extends JFrame {
     private JButton launchRandomNameButton;
 
     public ProgramLauncher() {
-        super("Program Launcher");
+        super("随机点名启动器");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        setSize(400, 300);
+        setSize(470, 470);
         setLocationRelativeTo(null); // 居中显示
         initComponents();
         setVisible(true);
@@ -23,27 +23,49 @@ public class ProgramLauncher extends JFrame {
         contentPane.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridwidth = GridBagConstraints.REMAINDER;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.insets = new Insets(10, 10, 10, 10); // 设置边距
+        gbc.fill = GridBagConstraints.BOTH;
+        gbc.insets = new Insets(20, 20, 20, 20); // 设置边距
 
-        launchGenshinButton = new JButton("Launch Genshin Impact");
+        // 设置背景图片
+        ImageIcon backgroundIcon = new ImageIcon(getClass().getResource("/icon/NHFLS.png"));
+        JLabel backgroundLabel = new JLabel(backgroundIcon);
+        backgroundLabel.setHorizontalAlignment(JLabel.CENTER);
+        backgroundLabel.setOpaque(false); // 设置透明
+        backgroundLabel.setLayout(new GridBagLayout()); // 设置布局管理器
+
+        // 设置按钮样式
+        launchGenshinButton = new JButton("原神版随机点名！启动！");
+        launchGenshinButton.setFont(new Font("宋体", Font.BOLD, 16)); // 设置字体大小
+        launchGenshinButton.setMinimumSize(new Dimension(200, 50)); // 设置最小尺寸
         launchGenshinButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 launchGenshinImpact();
                 minimizeWindow(); // 启动程序后最小化窗口
             }
         });
-        gbc.anchor = GridBagConstraints.CENTER;
-        contentPane.add(launchGenshinButton, gbc);
 
-        launchRandomNameButton = new JButton("Launch RandomName");
+        launchRandomNameButton = new JButton("随机点名！启动！");
+        launchRandomNameButton.setFont(new Font("宋体", Font.BOLD, 16)); // 设置字体大小
+        launchRandomNameButton.setMinimumSize(new Dimension(200, 50)); // 设置最小尺寸
         launchRandomNameButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 launchRandomName();
                 minimizeWindow(); // 启动程序后最小化窗口
             }
         });
-        contentPane.add(launchRandomNameButton, gbc);
+
+        // 将按钮添加到背景标签上
+        gbc.gridx = 0;
+        gbc.gridy = 2; // 向上移动
+        gbc.fill = GridBagConstraints.NONE;
+        gbc.anchor = GridBagConstraints.CENTER;
+        backgroundLabel.add(launchGenshinButton, gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 4; // 向下移动
+        backgroundLabel.add(launchRandomNameButton, gbc);
+
+        contentPane.add(backgroundLabel, gbc);
 
         // 添加窗口关闭事件，确保程序完全停止
         addWindowListener(new WindowAdapter() {
