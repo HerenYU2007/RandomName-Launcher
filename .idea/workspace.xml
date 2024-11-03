@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="RandomName_Launcher" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7ae32b4-5c75-4fc0-8399-78bd12724b88" name="更改" comment="updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RandomName_Launcher.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RandomName_Launcher.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ProgramLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProgramLauncher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,8 +36,8 @@
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/97105/Documents/GitHub/RandonName-Launcher",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.0",
+    "project.structure.last.edited": "工件",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "应用程序.ProgramLauncher.executor": "Run"
   }

@@ -15,6 +15,7 @@ public class ProgramLauncher extends JFrame {
         setSize(470, 470);
         setLocationRelativeTo(null); // 居中显示
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icon/NHFLS.ico")).getImage()); // 设置窗口图标为 NHFLS.ico
         setVisible(true);
     }
 
@@ -56,13 +57,11 @@ public class ProgramLauncher extends JFrame {
 
         // 将按钮添加到背景标签上
         gbc.gridx = 0;
-        gbc.gridy = 2; // 向上移动
-        gbc.fill = GridBagConstraints.NONE;
-        gbc.anchor = GridBagConstraints.CENTER;
+        gbc.gridy = 0;
         backgroundLabel.add(launchGenshinButton, gbc);
 
         gbc.gridx = 0;
-        gbc.gridy = 4; // 向下移动
+        gbc.gridy = 1;
         backgroundLabel.add(launchRandomNameButton, gbc);
 
         contentPane.add(backgroundLabel, gbc);
